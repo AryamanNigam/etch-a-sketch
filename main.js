@@ -1,6 +1,17 @@
 const container = document.querySelector("#container");
 const b = document.querySelector("button");
 
+function getRandomColor(){
+    let letters = "0123456789ABCDEF";
+    let color = '#';
+
+    for(let i = 0; i < 6; i++){
+        color += letters[Math.floor(Math.random() * 16)]
+    }
+
+    return color;
+}
+
 function gen(num){
     const style = getComputedStyle(container);
     let h = parseInt(style.height, 10);
@@ -16,9 +27,9 @@ function gen(num){
         node.style.width = n + "px";
         container.appendChild(node);
 
-        node.addEventListener("mouseenter", () =>{
+        node.addEventListener("mouseover", () =>{
 
-            node.style.backgroundColor = "blue";
+            node.style.backgroundColor = getRandomColor();
         })
     }
 }
