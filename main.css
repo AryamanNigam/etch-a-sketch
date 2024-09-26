@@ -1,6 +1,13 @@
-.but{
+#but{
     display: flex;
     justify-content: center;
+    background-color: white;
+}
+
+#erase{
+    display: flex;
+    justify-content: center;
+    background-color: white;
 }
 
 .loc {
@@ -17,9 +24,11 @@
     display: flex;
     flex-wrap: wrap;
     border: 1px solid green;       
+    background-color: white;
 }
 
 .node{
+    user-select: none;
     height: 25px;
     width: 25px;
     box-sizing: border-box;
