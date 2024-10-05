@@ -1,5 +1,6 @@
 const container = document.querySelector("#container");
 const b = document.querySelector("button");
+const erase = document.querySelector("#erase");
 
 function getRandomColor() {
     let letters = "0123456789ABCDEF";
@@ -59,11 +60,20 @@ function gen(num) {
 
 gen(16);
 
+let num = 16;
+
 b.addEventListener("click", () => {
-    let num = prompt("Enter the number of squares per side for the new grid");
+    num = prompt("Enter the number of squares per side for the new grid");
 
     while (container.firstChild) {
         container.removeChild(container.firstChild);
     }
     gen(num);
+});
+
+erase.addEventListener("click", () => {
+    const nodes = container.querySelectorAll(".node");
+    nodes.forEach(node =>{
+        node.style.backgroundColor = "white";
+    });
 });
